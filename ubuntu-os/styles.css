@@ -1,0 +1,68 @@
+/* Add to existing styles.css (or overwrite if starting fresh) */
+
+/* Core VoltNexis Colors (from Rufus page) */
+:root {
+    --voltnexis-primary: #007bff; /* Brand Blue */
+    --voltnexis-secondary: #0056b3;
+    --background-light: #f4f6f9;
+    --text-dark: #343a40;
+    --card-bg: #ffffff;
+    --verified-green: #28a745;
+    --max-width: 1200px;
+}
+
+/* Ubuntu Specific Styling */
+.file-icon .fa-ubuntu {
+    color: #E95420; /* Ubuntu Orange */
+}
+
+/* Make the single download button match the new width requirement */
+.primary-download-btn {
+    /* Existing styles: background-color, color, padding, font-size, etc. */
+    text-align: center;
+    display: block; /* Ensure it takes full width on mobile */
+    text-decoration: none; /* Make the link look like a button */
+}
+
+/* Style for the smaller button in the Detailed Download Section */
+.primary-download-btn.small-btn {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto 0 auto;
+    font-size: 1em;
+}
+
+.secondary-actions {
+    display: block; /* Stack on mobile */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.secondary-info {
+    font-size: 0.9em;
+    color: var(--voltnexis-primary);
+    display: block;
+}
+
+@media (min-width: 768px) {
+    /* Adjust quick action area for single button on desktop */
+    .quick-action-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow wrapping */
+        text-align: left;
+    }
+    .primary-download-btn {
+        flex-grow: 1; /* Allow button to take up remaining space */
+        margin: 0 20px;
+    }
+    .download-stats {
+        flex-shrink: 0;
+    }
+    .secondary-actions {
+        flex-basis: 100%; /* Forces this line below the button on desktop */
+        text-align: center;
+        margin-top: 10px;
+    }
+}
