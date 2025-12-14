@@ -4,217 +4,422 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GTA San Andreas – Full Download for PC & Android | VoltNexis</title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-body{
-    margin:0; font-family:Arial, sans-serif; background:#f7f7f7; color:#333;
-}
-.container{ width:92%; max-width:1100px; margin:auto; padding:20px 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Banner */
-.banner{
-    width:100%; height:280px; border-radius:12px;
-    background:#ddd url('BANNER-IMG') center/cover no-repeat;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header Box */
-.header-box{
-    background:white; padding:25px; border-radius:12px; margin-top:20px;
-    display:flex; gap:20px; align-items:center;
-}
-.header-box img{
-    width:100px; height:100px; border-radius:14px; background:#eee;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Section Blocks */
-.section{
-    background:white; padding:20px; border-radius:12px; margin-top:25px;
+/* Header */
+.header {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
 }
 
-/* Screenshot Gallery */
-.gallery{
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-    gap:15px; margin-top:15px;
-}
-.gallery img{
-    width:100%; height:150px; object-fit:cover; border-radius:10px; background:#ddd;
+.game-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* Table */
-table{ width:100%; border-collapse:collapse; margin-top:15px; }
-table th{
-    background:#2b7bff; color:white; padding:12px; font-size:14px;
-}
-table td{
-    padding:10px; border-bottom:1px solid #ececec;
+.game-info h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
-/* Download Button */
-.download-btn{
-    padding:7px 12px; background:#2b7bff; color:white;
-    border-radius:6px; text-decoration:none; font-size:13px;
+.game-info p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: #667eea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Download Section */
+.download-hero {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.download-hero h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.download-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+}
+
+.download-card h3 {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Content Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h2 i {
+    color: #667eea;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.requirements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.req-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.req-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
 /* Related Cards */
-.related-grid{
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-    gap:18px; margin-top:15px;
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
-.card{
-    background:#fafafa; border:1px solid #eee; border-radius:10px; padding:14px;
-}
-.card img{
-    width:100%; height:130px; object-fit:cover; border-radius:8px; background:#ddd;
-}
-.card h4{ margin:10px 0 5px; font-size:15px; }
-.card a{ color:#2b7bff; text-decoration:none; font-weight:bold; }
 
-.footer-space{ height:80px; }
+.related-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+}
+
+.related-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.related-card-content {
+    padding: 20px;
+}
+
+.related-card h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .game-info h1 {
+        font-size: 2rem;
+    }
+    
+    .download-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 <body>
 
 <div class="container">
-
-    <!-- Banner -->
-    <div class="banner"><img src="https://ea-unboxed-assets.croma.com/cromaunboxed-as/2025/04/GTA-San-Andreas-2.jpg"></div>
-
     <!-- Header -->
-    <div class="header-box">
-        <img src="https://i.ibb.co/7dz0QkHf/bbcbd2a2bb65ddad76e831c91c17b421.jpg" alt="Game Icon">
-        <div>
-            <h2>Grand Theft Auto: San Andreas</h2>
+    <div class="header">
+        <img src="https://i.ibb.co/7dz0QkHf/bbcbd2a2bb65ddad76e831c91c17b421.jpg" alt="GTA San Andreas" class="game-icon">
+        <div class="game-info">
+            <h1>Grand Theft Auto: San Andreas</h1>
             <p>Full Original Game Download – PC & Android</p>
-            <p>Official untouched files | High & Low quality builds</p>
+            <div class="badges">
+                <span class="badge"><i class="fas fa-shield-check"></i> Official Files</span>
+                <span class="badge"><i class="fas fa-download"></i> 2.8M+ Downloads</span>
+                <span class="badge"><i class="fas fa-star"></i> 4.9/5 Rating</span>
+            </div>
         </div>
     </div>
 
-    <!-- Game Description -->
-    <div class="section">
-        <h3>About GTA San Andreas</h3>
-        <p>
-            Grand Theft Auto: San Andreas is an action‑adventure game by Rockstar Games.
-            Follow CJ as he returns to Los Santos and fights through gangs, corruption,
-            missions, and an open world packed with content. This includes the original
-            PC files and Android versions (Adreno, Mali, Mediatek).
-        </p>
+    <!-- Download Section -->
+    <div class="download-hero">
+        <h2><i class="fas fa-download"></i> Download GTA San Andreas</h2>
+        <p>Choose your platform and quality preference</p>
+        
+        <div class="download-grid">
+            <div class="download-card">
+                <h3><i class="fas fa-desktop"></i> PC Version</h3>
+                <p>Full High Quality (Original) - 4.7GB</p>
+                <a href="https://voltnexis.github.io/apps/windows/app_exe.html?id=1" class="download-btn">
+                    <i class="fas fa-download"></i> Download PC Full
+                </a>
+            </div>
+            
+            <div class="download-card">
+                <h3><i class="fas fa-mobile-alt"></i> Android Version</h3>
+                <p>Full Version - 2.6GB</p>
+                <a href="https://voltnexis.github.io/apps/android/app.html?id=38" class="download-btn">
+                    <i class="fas fa-download"></i> Download Android
+                </a>
+            </div>
+            
+            <div class="download-card">
+                <h3><i class="fas fa-compress"></i> Compressed PC</h3>
+                <p>Low Quality (Compressed) - 800MB</p>
+                <a href="https://voltnexis.github.io/apps/windows/app_exe.html?id=1" class="download-btn">
+                    <i class="fas fa-download"></i> Download Lite
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="card">
+        <h2><i class="fas fa-info-circle"></i> About GTA San Andreas</h2>
+        <p>Grand Theft Auto: San Andreas is an action-adventure game by Rockstar Games. Follow CJ as he returns to Los Santos and fights through gangs, corruption, missions, and an open world packed with content. This includes the original PC files and Android versions (Adreno, Mali, Mediatek).</p>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <h4><i class="fas fa-map"></i> Huge Open World</h4>
+                <p>Los Santos, San Fierro, Las Venturas</p>
+            </div>
+            <div class="feature-item">
+                <h4><i class="fas fa-image"></i> HD Textures</h4>
+                <p>High-quality remastered textures</p>
+            </div>
+            <div class="feature-item">
+                <h4><i class="fas fa-gamepad"></i> Controller Support</h4>
+                <p>Supports gamepad on Android and PC</p>
+            </div>
+        </div>
     </div>
 
     <!-- Screenshots -->
-    <div class="section">
-        <h3>Screenshots</h3>
+    <div class="card">
+        <h2><i class="fas fa-images"></i> Screenshots</h2>
         <div class="gallery">
-            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/bb5e5e25e29046535aba405ad47bb826.jpg">
-            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/9b8a9636519a343c04f860eb6f0c22d3.jpg">
-            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/99efb826b071747efc32fa9a14117e99.jpg">
-            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/a861733e3625e0d409df25aee50d5273.jpg">
+            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/bb5e5e25e29046535aba405ad47bb826.jpg" alt="GTA SA Screenshot 1">
+            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/9b8a9636519a343c04f860eb6f0c22d3.jpg" alt="GTA SA Screenshot 2">
+            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/99efb826b071747efc32fa9a14117e99.jpg" alt="GTA SA Screenshot 3">
+            <img src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/a861733e3625e0d409df25aee50d5273.jpg" alt="GTA SA Screenshot 4">
         </div>
-    </div>
-
-    <!-- Features -->
-    <div class="section">
-        <h3>Game Features</h3>
-        <ul>
-            <li>Huge open world: Los Santos, San Fierro, Las Venturas</li>
-            <li>High‑quality remastered textures (PC full version)</li>
-            <li>Original missions, vehicles, and weapons</li>
-            <li>Works on low‑end and high‑end devices</li>
-            <li>Supports gamepad on Android and PC</li>
-        </ul>
     </div>
 
     <!-- System Requirements -->
-    <div class="section">
-        <h3>System Requirements</h3>
-
-        <h4>PC Requirements</h4>
-        <ul>
-            <li>OS: Windows XP / 7 / 8 / 10</li>
-            <li>RAM: 2GB minimum</li>
-            <li>GPU: 256MB (Intel/AMD/NVIDIA)</li>
-            <li>Storage: 4.7GB</li>
-        </ul>
-
-        <h4>Android Requirements</h4>
-        <ul>
-            <li>Android 7.0 or above</li>
-            <li>RAM: 2GB minimum</li>
-            <li>Storage: 2.5GB for full version</li>
-        </ul>
-    </div>
-
-    <!-- Download Table -->
-    <div class="section">
-        <h3>Download GTA San Andreas – Full Original Files</h3>
-
-        <table>
-            <tr>
-                <th>Platform</th>
-                <th>Type</th>
-                <th>Size</th>
-                <th>Download</th>
-            </tr>
-
-            <tr><td>PC</td><td>Full High Quality (Original)</td><td>4.7GB</td><td><a class="download-btn" href="#">Download</a></td></tr>
-            <tr><td>PC</td><td>Low Quality (Compressed)</td><td>800MB</td><td><a class="download-btn" href="#">Download</a></td></tr>
-
-            <tr><td>Android</td><td>Full Version</td><td>2.6GB</td><td><a class="download-btn" href="#">Download</a></td></tr>
-
-            <tr><td>Android</td><td>Low (Adreno)</td><td>1.1GB</td><td><a class="download-btn" href="#">Download</a></td></tr>
-
-            <tr><td>Android</td><td>Low (Mali)</td><td>1.1GB</td><td><a class="download-btn" href="#">Download</a></td></tr>
-
-            <tr><td>Android</td><td>Low (Mediatek)</td><td>1.1GB</td><td><a class="download-btn" href="#">Download</a></td></tr>
-        </table>
-    </div>
-
-    <!-- Extra Details -->
-    <div class="section">
-        <h3>Installation Instructions</h3>
-        <p><b>PC:</b> Extract → Run Setup → Play.</p>
-        <p><b>Android:</b> Install APK → Move OBB to /Android/obb/ → Open game.</p>
-    </div>
-
-    <!-- Related Search -->
-    <div class="section">
-        <h3>Related Searches</h3>
-
-        <div class="related-grid">
-
-            <div class="card">
-                <img src="BANNER-IMG">
-                <h4>GTA Vice City Full Download</h4>
-                <a href="#">View</a>
+    <div class="card">
+        <h2><i class="fas fa-desktop"></i> System Requirements</h2>
+        <div class="requirements">
+            <div class="req-section">
+                <h3><i class="fas fa-windows"></i> PC Requirements</h3>
+                <ul>
+                    <li>OS: Windows XP / 7 / 8 / 10 / 11</li>
+                    <li>RAM: 2GB minimum</li>
+                    <li>GPU: 256MB (Intel/AMD/NVIDIA)</li>
+                    <li>Storage: 4.7GB</li>
+                </ul>
             </div>
-
-            <div class="card">
-                <img src="BANNER-IMG">
-                <h4>GTA 5 Android Setup</h4>
-                <a href="#">Download</a>
+            
+            <div class="req-section">
+                <h3><i class="fas fa-mobile-alt"></i> Android Requirements</h3>
+                <ul>
+                    <li>Android 7.0 or above</li>
+                    <li>RAM: 2GB minimum</li>
+                    <li>Storage: 2.5GB for full version</li>
+                    <li>GPU: Adreno, Mali, or PowerVR</li>
+                </ul>
             </div>
-
-            <div class="card">
-                <img src="BANNER-IMG">
-                <h4>GTA San Andreas Mod Packs</h4>
-                <a href="#">Browse</a>
-            </div>
-
-            <div class="card">
-                <img src="BANNER-IMG">
-                <h4>Best PPSSPP Games</h4>
-                <a href="#">Open</a>
-            </div>
-
-            <div class="card">
-                <img src="BANNER-IMG">
-                <h4>GTA Trilogy Collection</h4>
-                <a href="#">View All</a>
-            </div>
-
         </div>
     </div>
 
-    <div class="footer-space"></div>
+    <!-- Installation Guide -->
+    <div class="card">
+        <h2><i class="fas fa-cogs"></i> Installation Instructions</h2>
+        <div class="requirements">
+            <div class="req-section">
+                <h3><i class="fas fa-desktop"></i> PC Installation</h3>
+                <ol>
+                    <li>Download the PC version</li>
+                    <li>Extract the downloaded files</li>
+                    <li>Run Setup.exe as administrator</li>
+                    <li>Follow installation wizard</li>
+                    <li>Launch and enjoy!</li>
+                </ol>
+            </div>
+            
+            <div class="req-section">
+                <h3><i class="fas fa-mobile-alt"></i> Android Installation</h3>
+                <ol>
+                    <li>Download APK + OBB files</li>
+                    <li>Install the APK file</li>
+                    <li>Move OBB to /Android/obb/</li>
+                    <li>Grant storage permissions</li>
+                    <li>Open game and play</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Games -->
+    <div class="card">
+        <h2><i class="fas fa-gamepad"></i> Related Games</h2>
+        <div class="related-grid">
+            <a href="#" class="related-card">
+                <img src="https://via.placeholder.com/300x150/667eea/white?text=GTA+Vice+City" alt="GTA Vice City">
+                <div class="related-card-content">
+                    <h4>GTA Vice City Full Download</h4>
+                    <p>Classic 80s action adventure</p>
+                </div>
+            </a>
+            
+            <a href="#" class="related-card">
+                <img src="https://via.placeholder.com/300x150/764ba2/white?text=GTA+5" alt="GTA 5">
+                <div class="related-card-content">
+                    <h4>GTA 5 Android Setup</h4>
+                    <p>Latest GTA experience</p>
+                </div>
+            </a>
+            
+            <a href="#" class="related-card">
+                <img src="https://via.placeholder.com/300x150/667eea/white?text=Mods" alt="GTA Mods">
+                <div class="related-card-content">
+                    <h4>GTA San Andreas Mod Packs</h4>
+                    <p>Enhance your gameplay</p>
+                </div>
+            </a>
+        </div>
+    </div>
 
 </div>
 </body>

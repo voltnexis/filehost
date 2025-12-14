@@ -1,3 +1,450 @@
-<a href="ins/">ins</a>
-<a href="ksa/">ksa</a>
-<a href="mid/">mid</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samsung Galaxy Tab A9 (SM-X115) Firmware Download</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.device-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.device-info h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.device-info p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: #667eea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Firmware Section */
+.firmware-hero {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.firmware-hero h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.region-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.region-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.region-card:hover {
+    transform: translateY(-5px);
+}
+
+.region-card h3 {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.region-card .region-name {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.firmware-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.firmware-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Content Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h2 i {
+    color: #667eea;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.spec-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.spec-item h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.steps {
+    counter-reset: step-counter;
+    list-style: none;
+}
+
+.steps li {
+    counter-increment: step-counter;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    position: relative;
+    padding-left: 70px;
+}
+
+.steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.warning-box {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    color: #856404;
+}
+
+.warning-box h4 {
+    color: #856404;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Related Cards */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.related-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+}
+
+.related-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.related-card-content {
+    padding: 20px;
+}
+
+.related-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .device-info h1 {
+        font-size: 2rem;
+    }
+    
+    .region-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="device-icon">
+            <i class="fas fa-tablet-alt"></i>
+        </div>
+        <div class="device-info">
+            <h1>Samsung Galaxy Tab A9</h1>
+            <p>Official Firmware Download (SM-X115)</p>
+            <div class="badges">
+                <span class="badge"><i class="fas fa-shield-check"></i> Official Samsung</span>
+                <span class="badge"><i class="fas fa-download"></i> Latest Firmware</span>
+                <span class="badge"><i class="fas fa-globe"></i> Multi-Region</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firmware Download Section -->
+    <div class="firmware-hero">
+        <h2><i class="fas fa-download"></i> Download Galaxy Tab A9 Firmware</h2>
+        <p>Select your region to download the appropriate firmware</p>
+        
+        <div class="region-grid">
+            <div class="region-card">
+                <h3><i class="fas fa-flag"></i> INS Region</h3>
+                <p class="region-name">India / South Asia</p>
+                <p>Latest official firmware for Indian market and South Asian countries</p>
+                <a href="ins/" class="firmware-btn">
+                    <i class="fas fa-download"></i> Download INS Firmware
+                </a>
+            </div>
+            
+            <div class="region-card">
+                <h3><i class="fas fa-flag"></i> KSA Region</h3>
+                <p class="region-name">Saudi Arabia / Middle East</p>
+                <p>Official firmware for Saudi Arabia and Middle Eastern markets</p>
+                <a href="ksa/" class="firmware-btn">
+                    <i class="fas fa-download"></i> Download KSA Firmware
+                </a>
+            </div>
+            
+            <div class="region-card">
+                <h3><i class="fas fa-flag"></i> MID Region</h3>
+                <p class="region-name">Middle East / Africa</p>
+                <p>Firmware for Middle East and African regions</p>
+                <a href="mid/" class="firmware-btn">
+                    <i class="fas fa-download"></i> Download MID Firmware
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Device Specifications -->
+    <div class="card">
+        <h2><i class="fas fa-tablet-alt"></i> Galaxy Tab A9 Specifications</h2>
+        <div class="specs-grid">
+            <div class="spec-item">
+                <h4><i class="fas fa-tv"></i> Display</h4>
+                <p>8.7" TFT LCD, 1340 x 800 pixels</p>
+            </div>
+            <div class="spec-item">
+                <h4><i class="fas fa-microchip"></i> Processor</h4>
+                <p>MediaTek Helio G99 Octa-core</p>
+            </div>
+            <div class="spec-item">
+                <h4><i class="fas fa-memory"></i> RAM & Storage</h4>
+                <p>4GB RAM, 64GB/128GB Storage</p>
+            </div>
+            <div class="spec-item">
+                <h4><i class="fas fa-camera"></i> Camera</h4>
+                <p>8MP Rear, 2MP Front Camera</p>
+            </div>
+            <div class="spec-item">
+                <h4><i class="fas fa-battery-full"></i> Battery</h4>
+                <p>5100mAh with 15W Fast Charging</p>
+            </div>
+            <div class="spec-item">
+                <h4><i class="fas fa-mobile-alt"></i> OS</h4>
+                <p>Android 13 with One UI 5.1</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flashing Instructions -->
+    <div class="card">
+        <h2><i class="fas fa-cogs"></i> How to Flash Firmware</h2>
+        <ol class="steps">
+            <li>
+                <strong>Download Firmware</strong>
+                <p>Select and download the appropriate firmware for your region</p>
+            </li>
+            <li>
+                <strong>Install Odin Tool</strong>
+                <p>Download and install Samsung Odin flashing tool on your PC</p>
+            </li>
+            <li>
+                <strong>Enter Download Mode</strong>
+                <p>Power off tablet, then hold Volume Down + Power to enter Download Mode</p>
+            </li>
+            <li>
+                <strong>Connect to PC</strong>
+                <p>Connect tablet to PC via USB cable with Samsung drivers installed</p>
+            </li>
+            <li>
+                <strong>Load Firmware</strong>
+                <p>In Odin, load AP, BL, CP, CSC files from the downloaded firmware</p>
+            </li>
+            <li>
+                <strong>Start Flashing</strong>
+                <p>Click Start in Odin and wait for the green PASS message</p>
+            </li>
+        </ol>
+
+        <div class="warning-box">
+            <h4><i class="fas fa-exclamation-triangle"></i> Important Warning</h4>
+            <ul>
+                <li>Always backup your device before flashing firmware</li>
+                <li>Ensure you download the correct region firmware for your device</li>
+                <li>Do not disconnect the device during the flashing process</li>
+                <li>Flashing firmware will void your warranty</li>
+                <li>Use original USB cable for stable connection</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Related Tools -->
+    <div class="card">
+        <h2><i class="fas fa-tools"></i> Required Tools</h2>
+        <div class="related-grid">
+            <a href="../odin-flash-tool" class="related-card">
+                <img src="https://8upload.com/image/1838e412bfc4acf3/odin-flash-tool.webp" alt="Odin Flash Tool">
+                <div class="related-card-content">
+                    <h3>Odin Flash Tool</h3>
+                    <p>Official Samsung firmware flashing tool</p>
+                </div>
+            </a>
+            
+            <a href="../samsung-usb-driver" class="related-card">
+                <img src="https://8upload.com/image/31ef204d0eef7afc/samsung-usb-driver-banner.webp" alt="Samsung USB Driver">
+                <div class="related-card-content">
+                    <h3>Samsung USB Driver</h3>
+                    <p>Essential drivers for Samsung devices</p>
+                </div>
+            </a>
+            
+            <a href="../samfwtool" class="related-card">
+                <img src="https://8upload.com/image/edd3b3fdcb8af599/samfwtool-banner.webp" alt="SamFw Tool">
+                <div class="related-card-content">
+                    <h3>SamFw Tool</h3>
+                    <p>Download Samsung firmware automatically</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

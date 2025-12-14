@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltNexis FileHost - Download Games, Software, Tools & Firmware Free</title>
+    <meta name="description" content="Download free games, software, flashing tools, and firmware. Get GTA games, VLC, WinRAR, Odin, Mi Flash Tool, and more. Safe, fast, and secure downloads.">
+    <meta name="keywords" content="download games, free software, GTA download, VLC media player, WinRAR, 7-Zip, Odin flash tool, Mi flash tool, Samsung firmware, Xiaomi firmware">
+    <meta name="author" content="VoltNexis">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://voltnexis.github.io/filehost/">
+    <meta property="og:title" content="VoltNexis FileHost - Download Games, Software, Tools & Firmware Free">
+    <meta property="og:description" content="Download free games, software, flashing tools, and firmware. Get GTA games, VLC, WinRAR, Odin, Mi Flash Tool, and more.">
+    <meta property="og:image" content="https://voltnexis.github.io/assets/logo-new.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VoltNexis FileHost - Download Games & Software Free">
+    <meta name="twitter:description" content="Download free games, software, flashing tools, and firmware. Safe, fast, and secure downloads.">
+    <meta name="twitter:image" content="https://voltnexis.github.io/assets/logo-new.webp">
+    <link rel="icon" type="image/x-icon" href="https://voltnexis.github.io/assets/logo-new.webp">
+    <link rel="shortcut icon" href="https://voltnexis.github.io/assets/logo-new.webp">
+    <link rel="apple-touch-icon" href="https://voltnexis.github.io/assets/logo-new.webp">
+    <link rel="canonical" href="https://voltnexis.github.io/filehost/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .site-header {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .site-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            margin: 0 auto 15px;
+        }
+
+        .game-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .game-card p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .games-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <img src="https://voltnexis.github.io/assets/logo-new.webp" alt="VoltNexis" class="logo">
+        <a href="/" class="site-title">VoltNexis FileHost</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="hero">
+        <h1>VoltNexis FileHost</h1>
+        <p>Download your favorite games and software safely and securely</p>
+        <div class="search-container">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search for games, tools, software...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </div>
+
+    <div class="games-grid" id="itemsGrid"></div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 VoltNexis FileHost. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+const items = [
+    {href: 'gta-3/', img: 'https://voltnexis.github.io/apps/img/gta3.webp', title: 'GTA 3', desc: 'Classic open-world crime game'},
+    {href: 'gta-vice-city/', img: 'https://play-lh.googleusercontent.com/nl1Y6bn06faVBuPEwWh5gInl_Zji3A5wTA4zscKDsJLXpcZ5C35F5zaGzEwCE0bKJ8Jr', title: 'GTA Vice City', desc: '80s neon-soaked adventure'},
+    {href: 'gta-san-andreas/', img: 'https://play-lh.googleusercontent.com/Plgr-TF6CRvZSLuXeCeximGXI86YLR-oH1M9ja-yuRz40eXsOTe-HgqbD6XtHVRCcGK6CLjq8sj2p4vfZfJ6sYI=w240-h480', title: 'GTA San Andreas', desc: 'Grove Street for life'},
+    {href: 'gta-3-definitive-edition/', img: 'https://play-lh.googleusercontent.com/fW06ls46hBjsQfdwES0cV_v6Yy_yEBoOOf2K8ACwmi26_4vZ9rhzYhRW3CucdUZpxYxZ=w240-h480', title: 'GTA 3: Definitive Edition', desc: 'Remastered classic'},
+    {href: 'gta-san-andreas-definitive-edition/', img: 'https://play-lh.googleusercontent.com/Plgr-TF6CRvZSLuXeCeximGXI86YLR-oH1M9ja-yuRz40eXsOTe-HgqbD6XtHVRCcGK6CLjq8sj2p4vfZfJ6sYI=w240-h480', title: 'GTA San Andreas: Definitive Edition', desc: 'Enhanced 90s experience'},
+    {href: 'gta-vice-city-definitive-edition/', img: 'https://play-lh.googleusercontent.com/PMwwyuavLk0Ob6vd8NXYW3yDu-yzQ5T_ZgYe0duQkft0ygCBfNGUCZztAPRcw6H6G1nIkNhB3ImyslXRy-GL=w240-h480', title: 'GTA Vice City: Definitive Edition', desc: 'Remastered 80s classic'},
+    {href: 'gta-chinatown-wars/', img: 'https://voltnexis.github.io/apps/img/gta-ctw.webp', title: 'GTA Chinatown Wars', desc: 'Top-down mobile experience'},
+    {href: 'gta-4/', img: 'https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/0b01707ef5603a26c1f542088f8f7c09.jpg', title: 'GTA 4', desc: 'Niko\'s Liberty City story'},
+    {href: 'gta-5/', img: 'https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/6a84/c670974867f83cb814c6b46b6fbc6c3d9caa23bf.jpg', title: 'GTA 5', desc: 'Ultimate GTA experience'},
+    {href: 'odin-flash-tool/', img: 'https://8upload.com/image/80c0d26b1e91cf5a/5a31e7e472b4a5c89e43ba5b650bb6685aedeb3dd491e5ece5e76a8e3599f16f_200.jpeg', title: 'Odin Flash Tool', desc: 'Samsung firmware flashing'},
+    {href: 'mi-flash-tool/', img: 'https://xiaomiflashtool.com/wp-content/uploads/splash.png', title: 'Mi Flash Tool', desc: 'Xiaomi firmware flashing'},
+    {href: 'sp-flash-tool/', img: 'https://spflashtool.com/download/images/sp-flash-logo.png', title: 'SP Flash Tool', desc: 'MediaTek firmware flashing'},
+    {href: 'qfil/', img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEVHcEwAXaoAXaoAXaoAXaoAXaoAVKYATKQAXapmkMKovtvW4e7o7/b////w9fq5y+KKqM8aZq44dLVCerhJAOgZAAAACXRSTlMAPdH0/8P//+TKXOdpAAAA20lEQVR4AYWSBRLDMAwEHTqZ8f9/rQJSud2gRwzGTPPykXli2fqVyWyrAmIAPW/GqsT5EGPwjkRsRUgupovs6FlIPjGhlJAYTyJUWQWB78q/hR6Ejp01XMHXvCuqEKzMMoWPaol6qiqOw+ISEmdB6wOUUySxlAwElJTEbTu9KEecfgm7hnwQjj+WGhMq0Jjv2Y7sSbN9qROsN+CO82OHVuaIH/fjW28lF6bidSpEAFHUqXyeZ6LXTci6CVK2fdyhcu1QSFmFAkAMVjRdk219B7KaP5faTJv9yDaZG76cFTPBaZzbAAAAAElFTkSuQmCC', title: 'QFIL Tool', desc: 'Qualcomm firmware flashing'},
+    {href: 'samfwtool/', img: 'https://play-lh.googleusercontent.com/qFv5sndC4SAfrBW7z5S0-vJ6oQ1sDlmjUpRU3sW64xqJ198wbZf1JCO3QCYKH430BwI=w240-h480-rw', title: 'SamFw Tool', desc: 'Samsung firmware downloader'},
+    {href: 'vlc-media-player/', img: 'https://voltnexis.github.io/apps/img/vlc.webp', title: 'VLC Media Player', desc: 'Universal media player'},
+    {href: 'winrar/', img: 'https://voltnexis.github.io/apps/img/winrar.webp', title: 'WinRAR', desc: 'Archive compression tool'},
+    {href: '7zip/', img: 'https://voltnexis.github.io/apps/img/7zip.webp', title: '7-Zip', desc: 'Free archive manager'},
+    {href: 'rufus-tool/', img: 'https://rufus.ie/pics/rufus-128.png', title: 'Rufus', desc: 'USB bootable creator'},
+    {href: 'ubuntu-os/', img: 'https://voltnexis.github.io/data/os/icons/ubuntu.webp', title: 'Ubuntu OS', desc: 'Linux operating system'},
+    {href: 'samsung-usb-driver/', img: 'https://www.progeeksblog.com/wp-content/uploads/2015/12/samsung-usb-driver.jpg', title: 'Samsung USB Driver', desc: 'Samsung device connectivity'},
+    {href: 'samsung-galaxy-tab-a9(sm-x115)-firmware/', img: 'https://samfw.com/assets/img/models/samsung-galaxy-tab-a9.jpg', title: 'Galaxy Tab A9 Firmware', desc: 'SM-X115 firmware files'},
+    {href: 'live-wallpaper-pack/', img: 'https://atomguygg.github.io/atomguy/live/files/live.GIF', title: 'Live Wallpaper Pack', desc: '10 premium animated wallpapers'},
+    {href: 'watch-anime-free/', img: 'https://atomguygg.github.io/atomguy/files/ANIME.gif', title: 'Watch Anime Free 2025', desc: 'Best free anime streaming sites'}
+];
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function renderItems(itemsToRender) {
+    const grid = document.getElementById('itemsGrid');
+    grid.innerHTML = itemsToRender.map(item => `
+        <a href="${item.href}" class="game-card">
+            <img src="${item.img}" alt="${item.title}" class="game-icon">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+        </a>
+    `).join('');
+}
+
+function filterItems(query) {
+    return items.filter(item => 
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
+        item.desc.toLowerCase().includes(query.toLowerCase())
+    );
+}
+
+document.getElementById('searchBox').addEventListener('input', (e) => {
+    const query = e.target.value;
+    const filtered = query ? filterItems(query) : shuffle([...items]);
+    renderItems(filtered);
+});
+
+// Initial shuffle and render
+renderItems(shuffle([...items]));
+</script>
+
+</body>
+</html>
