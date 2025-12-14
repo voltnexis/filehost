@@ -191,7 +191,7 @@
 </footer>
 
 <script>
-const items = [
+const shuffleItems = [
     {href: 'gta-3/', img: 'https://voltnexis.github.io/apps/img/gta3.webp', title: 'GTA 3', desc: 'Classic open-world crime game'},
     {href: 'gta-vice-city/', img: 'https://play-lh.googleusercontent.com/nl1Y6bn06faVBuPEwWh5gInl_Zji3A5wTA4zscKDsJLXpcZ5C35F5zaGzEwCE0bKJ8Jr', title: 'GTA Vice City', desc: '80s neon-soaked adventure'},
     {href: 'gta-san-andreas/', img: 'https://play-lh.googleusercontent.com/Plgr-TF6CRvZSLuXeCeximGXI86YLR-oH1M9ja-yuRz40eXsOTe-HgqbD6XtHVRCcGK6CLjq8sj2p4vfZfJ6sYI=w240-h480', title: 'GTA San Andreas', desc: 'Grove Street for life'},
@@ -213,9 +213,12 @@ const items = [
     {href: 'ubuntu-os/', img: 'https://voltnexis.github.io/data/os/icons/ubuntu.webp', title: 'Ubuntu OS', desc: 'Linux operating system'},
     {href: 'samsung-usb-driver/', img: 'https://www.progeeksblog.com/wp-content/uploads/2015/12/samsung-usb-driver.jpg', title: 'Samsung USB Driver', desc: 'Samsung device connectivity'},
     {href: 'samsung-galaxy-tab-a9(sm-x115)-firmware/', img: 'https://samfw.com/assets/img/models/samsung-galaxy-tab-a9.jpg', title: 'Galaxy Tab A9 Firmware', desc: 'SM-X115 firmware files'},
-    {href: 'live-wallpaper-pack/', img: 'https://atomguygg.github.io/atomguy/live/files/live.GIF', title: 'Live Wallpaper Pack', desc: '10 premium animated wallpapers'},
-    {href: 'watch-anime-free/', img: 'https://atomguygg.github.io/atomguy/files/ANIME.gif', title: 'Watch Anime Free 2025', desc: 'Best free anime streaming sites'}
+    {href: 'live-wallpaper-pack/', img: 'https://atomguygg.github.io/atomguy/live/files/live.GIF', title: 'Live Wallpaper Pack', desc: '10 premium animated wallpapers'}
 ];
+
+const fixedItem = {href: 'watch-anime-free/', img: 'https://atomguygg.github.io/atomguy/files/ANIME.gif', title: 'Watch Anime Free 2025', desc: 'Best free anime streaming sites'};
+
+const allItems = [...shuffleItems, fixedItem];
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -237,20 +240,24 @@ function renderItems(itemsToRender) {
 }
 
 function filterItems(query) {
-    return items.filter(item => 
+    return allItems.filter(item => 
         item.title.toLowerCase().includes(query.toLowerCase()) ||
         item.desc.toLowerCase().includes(query.toLowerCase())
     );
 }
 
+function getDisplayItems() {
+    return [...shuffle([...shuffleItems]), fixedItem];
+}
+
 document.getElementById('searchBox').addEventListener('input', (e) => {
     const query = e.target.value;
-    const filtered = query ? filterItems(query) : shuffle([...items]);
+    const filtered = query ? filterItems(query) : getDisplayItems();
     renderItems(filtered);
 });
 
 // Initial shuffle and render
-renderItems(shuffle([...items]));
+renderItems(getDisplayItems());
 </script>
 
 </body>
