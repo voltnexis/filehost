@@ -1,0 +1,447 @@
+/* --- Global Variables and Resets --- */
+:root {
+    --voltnexis-primary: #007bff; /* VoltNexis Brand Blue */
+    --voltnexis-secondary: #0056b3;
+    --background-light: #f4f6f9;
+    --text-dark: #343a40;
+    --card-bg: #ffffff;
+    --verified-green: #28a745;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h2 {
+    color: var(--voltnexis-primary);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+}
+
+/* --- 1️⃣ Header / Top Bar --- */
+.file-header {
+    background-color: var(--text-dark);
+    color: white;
+    padding: 20px 0;
+    border-bottom: 5px solid var(--voltnexis-primary);
+}
+
+.file-info-bar {
+    display: grid;
+    grid-template-areas:
+        "icon title badge"
+        "meta meta meta";
+    gap: 10px;
+    align-items: center;
+}
+
+.file-icon {
+    grid-area: icon;
+    font-size: 3em;
+    color: var(--voltnexis-primary);
+}
+
+.file-title-group {
+    grid-area: title;
+}
+
+.file-title {
+    font-size: 1.8em;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.file-version {
+    display: block;
+    font-size: 0.9em;
+    color: #ced4da;
+}
+
+.meta-data-group {
+    grid-area: meta;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85em;
+    padding-top: 10px;
+    border-top: 1px solid #495057;
+}
+
+.verified-badge {
+    color: var(--verified-green);
+    font-weight: bold;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- Main Content Layout (Desktop) --- */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Mobile stack */
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.content-body {
+    order: 2; /* Content after Quick Action on mobile */
+}
+
+.sidebar-content {
+    order: 3;
+}
+
+/* --- Section Cards --- */
+.section-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+/* --- 2️⃣ Quick Action Area --- */
+.quick-action-area {
+    order: 1; /* Top placement */
+    text-align: center;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.download-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.download-stats i {
+    color: var(--voltnexis-primary);
+}
+
+.primary-download-btn {
+    background-color: var(--voltnexis-primary);
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.25em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.primary-download-btn:hover {
+    background-color: var(--voltnexis-secondary);
+}
+
+.secondary-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--voltnexis-primary);
+    border: 1px solid var(--voltnexis-primary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.secondary-btn:hover {
+    background-color: var(--voltnexis-primary);
+    color: white;
+}
+
+/* --- 3️⃣ Screenshot & Media Gallery --- */
+.media-gallery-placeholder {
+    background-color: #adb5bd;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-style: italic;
+}
+
+/* --- 4️⃣ About / Description --- */
+.description-content ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* --- 5️⃣ Key Specifications --- */
+.spec-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 15px;
+    font-size: 0.95em;
+}
+.spec-grid div {
+    padding: 10px;
+    background-color: var(--background-light);
+    border-radius: 4px;
+}
+
+/* --- 6️⃣ Security & Verification --- */
+.security-section {
+    font-size: 0.95em;
+}
+.clean-status {
+    font-weight: bold;
+    color: var(--verified-green);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+.checksums {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff3cd; /* Light warning color */
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    font-family: monospace;
+}
+.trusted-tag {
+    color: var(--voltnexis-primary);
+    font-weight: bold;
+}
+
+/* --- 7️⃣ Download Section (Detailed) --- */
+.download-option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.download-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+.download-link {
+    background-color: var(--voltnexis-primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.download-link.secondary { background-color: var(--secondary-color); }
+.download-link.mirror { background-color: #fd7e14; }
+
+.download-notes {
+    padding: 15px;
+    background-color: #e9f7ee; /* Light info background */
+    border-left: 5px solid var(--verified-green);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.integrity-notice {
+    color: #dc3545;
+}
+
+/* --- 1️⃣0️⃣ User Reviews & Ratings --- */
+.review-summary {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.rating-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--voltnexis-primary);
+}
+.star-rating {
+    color: gold;
+    font-size: 1.5em;
+}
+.user-review {
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 3px solid var(--voltnexis-primary);
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-style: italic;
+}
+.review-btn {
+    background-color: var(--verified-green);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- 1️⃣1️⃣ Related Files / Similar Downloads --- */
+.related-files-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+.related-files-section li a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+/* --- 1️⃣2️⃣ FAQ Section --- */
+.faq-section details {
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+}
+.faq-section summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+.faq-section summary::before {
+    content: "▶";
+    margin-right: 10px;
+    color: var(--voltnexis-primary);
+}
+.faq-section details[open] summary::before {
+    content: "▼";
+}
+.faq-section p {
+    padding: 10px 0 0 15px;
+    font-size: 0.9em;
+}
+
+/* --- 1️⃣3️⃣ Footer Info --- */
+.main-footer {
+    background-color: var(--text-dark);
+    color: white;
+    padding: 20px 0;
+    font-size: 0.85em;
+    margin-top: 30px;
+}
+.footer-links {
+    text-align: center;
+}
+.footer-links a {
+    color: #ced4da;
+    margin: 0 5px;
+}
+.footer-links a:hover {
+    color: var(--voltnexis-primary);
+}
+.report-btn {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+
+/* ================================== */
+/* --- Desktop Media Queries (768px+) --- */
+/* ================================== */
+@media (min-width: 768px) {
+    /* Header Desktop Layout */
+    .file-info-bar {
+        grid-template-areas: "icon title meta badge";
+        grid-template-columns: 60px 1fr 2fr auto;
+        gap: 20px;
+    }
+    .meta-data-group {
+        border-top: none;
+        padding-top: 0;
+        justify-content: flex-start;
+        font-size: 0.9em;
+    }
+    .verified-badge {
+        grid-area: badge;
+        margin-left: 0;
+    }
+
+    /* Main Content Grid */
+    .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* Content | Sidebar */
+        grid-template-areas:
+            "quick quick"
+            "body sidebar";
+    }
+
+    .quick-action-area {
+        grid-area: quick;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .download-stats {
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+    .primary-download-btn {
+        width: auto;
+        margin: 0;
+        font-size: 1.1em;
+    }
+    .secondary-actions {
+        order: 3;
+        margin-left: 20px;
+    }
+    .content-body {
+        grid-area: body;
+        order: initial;
+    }
+    .sidebar-content {
+        grid-area: sidebar;
+        order: initial;
+    }
+
+    /* Specifications Desktop Grid */
+    .spec-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on desktop */
+    }
+
+    /* Footer Desktop Layout */
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .legal-links {
+        margin-left: auto;
+    }
+}
+
+/* Optional: Even Larger Desktop Screens */
+@media (min-width: 1024px) {
+    .spec-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large desktop */
+    }
+}
